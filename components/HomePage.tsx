@@ -1,14 +1,22 @@
-import React from 'react'
-import Link from 'next/link'
+import React from "react";
+import HeroNews from "./HeroNews";
+import MoviesCarousel from "./MoviesCarousel";
+import ReviewsWrapper from "./ReviewsWrapper";
 
 const HomePage = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <div>
-          <Link href="/protected">Navigate To Protected Route</Link>
-        </div>
-      </main>
-  )
-}
+    <main className="flex min-h-screen flex-col items-center justify-between p-10 gap-10">
+      <HeroNews />
 
-export default HomePage
+      <MoviesCarousel />
+
+      <ReviewsWrapper />
+
+      <h2 className="text-white">News</h2>
+
+      <h2 className="text-white">Recent news section</h2>
+    </main>
+  );
+};
+
+export default HomePage;

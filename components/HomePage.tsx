@@ -20,7 +20,7 @@ const HomePage = () => {
   return (
     <main
       ref={container}
-      className="flex min-h-screen flex-col items-center justify-between p-10 pt-28 gap-20"
+      className="flex min-h-screen flex-col items-center justify-between pt-28 gap-20"
     >
       <motion.div style={{ y: sm }} className="pt-10">
         <HeroNews />
@@ -37,10 +37,6 @@ const HomePage = () => {
       <motion.div style={{ y: md }}>
         <ReviewsWrapper />
       </motion.div>
-
-      <h2 className="text-white">News</h2>
-
-      <h2 className="text-white">Recent news section</h2>
     </main>
   );
 };

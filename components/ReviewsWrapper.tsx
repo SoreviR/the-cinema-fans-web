@@ -9,23 +9,58 @@ const ReviewsWrapper = () => {
     offset: ["start end", "end start"],
   });
 
-  const sm = useTransform(scrollYProgress, [0, 1], [0, 250]);
-  const md = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  // const initialAnimation =
   const lg = useTransform(scrollYProgress, [0, 1], [0, 50]);
 
   return (
-    <div ref={container} className="h-screen flex flex-col gap-5 p-14">
+    <div
+      ref={container}
+      className="h-screen w-[1200px] flex flex-col gap-5 p-14 overflow-hidden"
+    >
       <h2 className="text-4xl text-white">Reviews</h2>
       <div className="flex gap-12 flex-wrap">
-        <motion.div style={{ y: sm }}>
+        <motion.div
+          initial={{
+            position: "absolute",
+            x: 800,
+          }}
+          whileInView={{
+            x: 0,
+          }}
+          transition={{
+            duration: 2,
+          }}
+        >
           <ReviewCard />
         </motion.div>
 
-        <motion.div style={{ y: md }}>
+        <motion.div
+          initial={{
+            position: "absolute",
+            x: 800,
+          }}
+          whileInView={{
+            x: 400,
+          }}
+          transition={{
+            duration: 2,
+          }}
+        >
           <ReviewCard />
         </motion.div>
 
-        <motion.div style={{ y: lg }}>
+        <motion.div
+          initial={{
+            position: "absolute",
+            x: 800,
+          }}
+          whileInView={{
+            x: 800,
+          }}
+          transition={{
+            duration: 2,
+          }}
+        >
           <ReviewCard />
         </motion.div>
       </div>

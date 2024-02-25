@@ -7,14 +7,14 @@ import "swiper/css/pagination";
 
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import CardSlider from "./MovieCardSlider";
-import { useMovies } from "@/hooks/useMoviesAndSeries";
+import { useSeries } from "@/hooks/useMoviesAndSeries";
 
-const MoviesCarousel = () => {
-  const { movies, isLoading } = useMovies();
+const SeriesCarousel = () => {
+  const { series, isLoading } = useSeries();
 
   interface MovieProps {
     poster_path: string;
-    original_title: string;
+    name: string;
     overview: string;
     id: number;
   }
@@ -24,11 +24,14 @@ const MoviesCarousel = () => {
   }
 
   return (
-    <div className="h-500flex w-[1200px] flex-col gap-5 p-14">
-      <h2 className="text-4xl text-white">Movies</h2>
+    <div className="w-[1200px] p-14 flex flex-col gap-5 ">
+      <h2 className="text-4xl text-white">Series</h2>
       <Swiper
         loop={false}
-        autoplay={true}
+        // autoplay={{
+        //   delay: 3000,
+        //   disableOnInteraction: false,
+        // }}
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
@@ -42,14 +45,14 @@ const MoviesCarousel = () => {
         }}
         pagination={false}
         modules={[EffectCoverflow, Pagination]}
-        className=" w-[1200px] h-[450px]"
+        className="p-14 w-[1200px] h-[450px]"
       >
-        {movies.map((movie: MovieProps) => {
+        {series.map((movie: MovieProps) => {
           return (
-            <SwiperSlide className="w-[300px] h-500 pt-10" key={movie.id}>
+            <SwiperSlide className=" w-[300px] h-auto pt-10" key={movie.id}>
               <CardSlider
                 cardImg={movie.poster_path}
-                cardTitle={movie.original_title}
+                cardTitle={movie.name}
                 cardInfo={movie.overview}
               />
             </SwiperSlide>
@@ -60,4 +63,4 @@ const MoviesCarousel = () => {
   );
 };
 
-export default MoviesCarousel;
+export default SeriesCarousel;

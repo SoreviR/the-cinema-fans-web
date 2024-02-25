@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import QueryMoviesProvider from "@/plugins/QueryMoviesProvider";
+import QueryMoviesSeriesProvider from "@/plugins/QueryMoviesProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <QueryMoviesProvider>{children}</QueryMoviesProvider>
+        <QueryMoviesSeriesProvider>{children}</QueryMoviesSeriesProvider>
       </body>
     </html>
   );

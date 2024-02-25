@@ -4,10 +4,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
 
-const QueryMoviesProvider = ({ children }: React.PropsWithChildren) => {
+const QueryMoviesSeriesProvider = ({ children }: React.PropsWithChildren) => {
   return (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 };
 
-export default QueryMoviesProvider;
+export default QueryMoviesSeriesProvider;

@@ -12,22 +12,41 @@ const HeroNews = () => {
   });
 
   const sm = useTransform(scrollYProgress, [0, 1], [0, -50]);
-  const md = useTransform(scrollYProgress, [0, 1], [0, -150]);
-  const lg = useTransform(scrollYProgress, [0, 1], [0, -250]);
+  const md = useTransform(scrollYProgress, [0, 2], [0, -150]);
 
   return (
-    <motion.div style={{ y: sm }} className="h-screen">
-      <Image
-        className="rounded-lg"
-        src={Dune2Poster}
-        alt="Poster"
-        width={800}
-        height={800}
-      />
-      <motion.div style={{ y: lg }} className="absolute -right-20 top-1/2">
-        <HeroNewsCard />
+    <div ref={container}>
+      <motion.div style={{ y: sm }} className="h-screen">
+        <Image
+          className="rounded-lg"
+          src={Dune2Poster}
+          alt="Poster"
+          width={800}
+          height={800}
+        />
+        <motion.div
+          transition={{
+            duration: 2,
+          }}
+          initial={{
+            x: 0,
+            position: "absolute",
+            top: 300,
+          }}
+          animate={{
+            x: 650,
+          }}
+          exit={{
+            x: 0,
+            position: "absolute",
+            top: 300,
+          }}
+          className="left-0 "
+        >
+          <HeroNewsCard />
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 

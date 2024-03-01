@@ -6,28 +6,28 @@ import Link from "next/link";
 const Navbar = () => {
   const navbarLinks = [
     {
-      path: "",
+      path: "/movies",
       text: "Movies",
     },
     {
-      path: "",
+      path: "/series",
       text: "Series",
     },
     {
-      path: "",
+      path: "/reviews",
       text: "Reviews",
     },
     {
-      path: "",
+      path: "/news",
       text: "News",
     },
     {
-      path: "",
+      path: "/contact",
       text: "Contact",
     },
   ];
   return (
-    <nav className="w-full flex justify-between items-center fixed z-50 p-6 bg-transparent">
+    <nav className="w-full flex justify-between items-center fixed z-50 p-6 bg-slate-950/80">
       <Link href={"/"}>
         <Image src={Logo} alt="logo" width={300} height={200} />
       </Link>

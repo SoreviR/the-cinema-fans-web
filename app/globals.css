@@ -35,3 +35,12 @@ body {
 body {
   background-color: black;
 }
+
+:root {
+  --swiper-theme-color: aqua;
+}
+
+.swiper-pagination-bullet {
+  background-color: aqua;
+  size: 2rem;
+}

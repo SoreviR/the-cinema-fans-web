@@ -5,6 +5,7 @@ export const getSeries = async () => {
     const response = await fetch(url, { cache: "no-cache" });
     const data = await response.json();
     const seriesData = await data.results;
+
     console.log(seriesData);
 
     return seriesData;

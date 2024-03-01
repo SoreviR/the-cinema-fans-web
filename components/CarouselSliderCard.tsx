@@ -7,7 +7,7 @@ interface CardSliderProps {
   cardInfo: string;
 }
 // width y higth 130
-const CardSlider: React.FC<CardSliderProps> = ({
+const CarouselSliderCard: React.FC<CardSliderProps> = ({
   cardImg,
   cardTitle,
   cardInfo,
@@ -34,4 +34,4 @@ const CardSlider: React.FC<CardSliderProps> = ({
   );
 };
 
-export default CardSlider;
+export default CarouselSliderCard;

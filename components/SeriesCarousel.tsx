@@ -6,7 +6,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 import { EffectCoverflow, Pagination } from "swiper/modules";
-import CardSlider from "./MovieCardSlider";
+import CarouselSliderCard from "./CarouselSliderCard";
 import { useSeries } from "@/hooks/useMoviesAndSeries";
 
 const SeriesCarousel = () => {
@@ -45,15 +45,15 @@ const SeriesCarousel = () => {
         }}
         pagination={false}
         modules={[EffectCoverflow, Pagination]}
-        className="p-14 w-[1200px] h-[450px]"
+        className="p-14 w-[1100px] h-[450px]"
       >
-        {series.map((movie: MovieProps) => {
+        {series.map((serie: MovieProps) => {
           return (
-            <SwiperSlide className=" w-[300px] h-auto pt-10" key={movie.id}>
-              <CardSlider
-                cardImg={movie.poster_path}
-                cardTitle={movie.name}
-                cardInfo={movie.overview}
+            <SwiperSlide className=" w-[300px] h-auto pt-10" key={serie.id}>
+              <CarouselSliderCard
+                cardImg={serie.poster_path}
+                cardTitle={serie.name}
+                cardInfo={serie.overview}
               />
             </SwiperSlide>
           );

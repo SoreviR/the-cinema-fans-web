@@ -35,7 +35,7 @@ const Navbar = () => {
       <ul className="flex gap-8 text-white font-bold [&>li]:px-2 [&>li]:py-2 [&>li]:rounded-xl">
         {navbarLinks.map((link, i) => {
           return (
-            <li key={i} className="hover:bg-white/20">
+            <li key={i} className="hover:text-[#6ffde5]">
               <Link href={link.path}>{link.text}</Link>
             </li>
           );

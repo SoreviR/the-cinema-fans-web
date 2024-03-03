@@ -24,8 +24,8 @@ const SeriesCarousel = () => {
   }
 
   return (
-    <div className="w-[1200px] p-14 flex flex-col gap-5 ">
-      <h2 className="text-4xl text-white">Series</h2>
+    <div className="h-screen w-[1200px] flex flex-col gap-10 p-14 pl-20">
+      <h2 className="text-4xl text-white ml-32">Series</h2>
       <Swiper
         loop={false}
         // autoplay={{
@@ -45,7 +45,7 @@ const SeriesCarousel = () => {
         }}
         pagination={false}
         modules={[EffectCoverflow, Pagination]}
-        className="p-14 w-[1100px] h-[450px]"
+        className="w-full h-[480px]"
       >
         {series.map((serie: MovieProps) => {
           return (

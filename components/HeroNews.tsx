@@ -15,8 +15,9 @@ const HeroNews = () => {
   const md = useTransform(scrollYProgress, [0, 2], [0, -150]);
 
   return (
-    <div ref={container}>
-      <motion.div style={{ y: sm }} className="h-screen">
+    <div ref={container} className="flex flex-col w-scren h-screen p-5 gap-5 ">
+      <h2 className="text-4xl text-white">News</h2>
+      <div className="self-center">
         <Image
           className="rounded-lg"
           src={Dune2Poster}
@@ -34,7 +35,7 @@ const HeroNews = () => {
             top: 300,
           }}
           animate={{
-            x: 650,
+            x: 700,
           }}
           exit={{
             x: 0,
@@ -45,7 +46,7 @@ const HeroNews = () => {
         >
           <HeroNewsCard />
         </motion.div>
-      </motion.div>
+      </div>
     </div>
   );
 };

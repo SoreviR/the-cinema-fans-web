@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getMovies } from "@/utils/MoviesData";
 import { getSeries } from "@/utils/TvSeriesData";
+import { getMovieReview } from "@/utils/MovieReviewData";
 
 export const useMovies = () => {
   const {
@@ -36,6 +37,24 @@ export const useSeries = () => {
     isLoading,
     isError,
     series,
+    isFetching,
+  };
+};
+
+export const useMovieReview = (movieid: string) => {
+  const {
+    isLoading,
+    isError,
+    data: movieReview = [],
+    isFetching,
+  } = useQuery({
+    queryKey: ["movieReview", movieid],
+    queryFn: () => getMovieReview(movieid),
+  });
+  return {
+    isLoading,
+    isError,
+    movieReview,
     isFetching,
   };
 };

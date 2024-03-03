@@ -24,8 +24,8 @@ const MoviesCarousel = () => {
   }
 
   return (
-    <div className="h-500flex w-[1200px] flex-col gap-5 p-14">
-      <h2 className="text-4xl text-white">Movies</h2>
+    <div className="h-screen w-[1200px] flex flex-col gap-10 p-14 pl-20">
+      <h2 className="text-4xl text-white ml-32">Movies</h2>
       <Swiper
         loop={false}
         autoplay={true}
@@ -40,9 +40,9 @@ const MoviesCarousel = () => {
           modifier: 1,
           slideShadows: true,
         }}
-        pagination={true}
+        pagination={false}
         modules={[EffectCoverflow, Pagination]}
-        className=" w-[1100px] h-[480px]"
+        className="w-full h-[480px]"
       >
         {movies.map((movie: MovieProps) => {
           return (

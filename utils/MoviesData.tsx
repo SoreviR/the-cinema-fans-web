@@ -5,9 +5,8 @@ export const getMovies = async () => {
     const response = await fetch(url, { cache: "no-cache" });
     const data = await response.json();
     const moviesData = await data.results;
-    console.log(data);
 
-    console.log(moviesData);
+    // console.log(moviesData);
 
     return moviesData;
   } catch (error) {

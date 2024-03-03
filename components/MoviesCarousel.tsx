@@ -48,6 +48,7 @@ const MoviesCarousel = () => {
           return (
             <SwiperSlide className="w-[300px] h-500 pt-10" key={movie.id}>
               <CarouselSliderCard
+                cardId={movie.id}
                 cardImg={movie.poster_path}
                 cardTitle={movie.original_title}
                 cardInfo={movie.overview}

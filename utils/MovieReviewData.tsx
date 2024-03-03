@@ -5,7 +5,7 @@ export const getMovieReview = async (movieid: string) => {
     const data = await response.json();
     const reviewData = await data.results;
 
-    console.log(reviewData);
+    // console.log(reviewData);
 
     return reviewData;
   } catch (error) {

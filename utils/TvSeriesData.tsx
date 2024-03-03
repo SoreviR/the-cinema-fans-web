@@ -6,7 +6,7 @@ export const getSeries = async () => {
     const data = await response.json();
     const seriesData = await data.results;
 
-    console.log(seriesData);
+    // console.log(seriesData);
 
     return seriesData;
   } catch (error) {

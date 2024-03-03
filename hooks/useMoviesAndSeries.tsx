@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getMovies } from "@/utils/MoviesData";
 import { getSeries } from "@/utils/TvSeriesData";
 import { getMovieReview } from "@/utils/MovieReviewData";
+import { getMovieDetails } from "@/utils/MovieDetailsData";
 
 export const useMovies = () => {
   const {
@@ -55,6 +56,24 @@ export const useMovieReview = (movieid: string) => {
     isLoading,
     isError,
     movieReview,
+    isFetching,
+  };
+};
+
+export const useMovieDetails = (movieid: string) => {
+  const {
+    isLoading,
+    isError,
+    data: movieDetails = [],
+    isFetching,
+  } = useQuery({
+    queryKey: ["movieDetail", movieid],
+    queryFn: () => getMovieDetails(movieid),
+  });
+  return {
+    isLoading,
+    isError,
+    movieDetails,
     isFetching,
   };
 };

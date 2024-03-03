@@ -6,7 +6,12 @@ const page = ({
 }: {
   params: { movieid: string; reviewid: string };
 }) => {
-  return <MovieReviewPage movieid={params.movieid} />;
+  return (
+    <div>
+      <div className="h-24"></div>
+      <MovieReviewPage movieid={params.movieid} />;
+    </div>
+  );
 };
 
 export default page;

@@ -12,7 +12,7 @@ const MoviesPage = () => {
     poster_path: string;
     vote_average: number;
     overview: string;
-    id: number;
+    id: string;
   }
 
   if (isLoading) {
@@ -31,6 +31,7 @@ const MoviesPage = () => {
                 cardImg={movie.poster_path}
                 cardRate={movie.vote_average}
                 cardInfo={movie.overview}
+                cardId={movie.id}
               />
               <p className="text-white text-wrap w-44 text-center">
                 {movie.title}

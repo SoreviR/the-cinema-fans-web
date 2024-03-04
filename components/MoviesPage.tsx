@@ -13,6 +13,7 @@ const MoviesPage = () => {
     vote_average: number;
     overview: string;
     id: string;
+    page: string;
   }
 
   if (isLoading) {
@@ -32,6 +33,7 @@ const MoviesPage = () => {
                 cardRate={movie.vote_average}
                 cardInfo={movie.overview}
                 cardId={movie.id}
+                cardPage="movies"
               />
               <p className="text-white text-wrap w-44 text-center">
                 {movie.title}

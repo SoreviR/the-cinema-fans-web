@@ -51,9 +51,11 @@ const SeriesCarousel = () => {
           return (
             <SwiperSlide className=" w-[300px] h-auto pt-10" key={serie.id}>
               <CarouselSliderCard
+                cardId={serie.id}
                 cardImg={serie.poster_path}
                 cardTitle={serie.name}
                 cardInfo={serie.overview}
+                cardPage="series"
               />
             </SwiperSlide>
           );

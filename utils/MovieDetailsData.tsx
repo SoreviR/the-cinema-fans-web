@@ -6,7 +6,7 @@ export const getMovieDetails = async (movieid: string) => {
     const data = await response.json();
     const movieData = await data;
 
-    console.log(movieData);
+    // console.log(movieData);
 
     return movieData;
   } catch (error) {

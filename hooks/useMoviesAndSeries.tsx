@@ -5,6 +5,8 @@ import { getMovies } from "@/utils/MoviesData";
 import { getSeries } from "@/utils/TvSeriesData";
 import { getMovieReview } from "@/utils/MovieReviewData";
 import { getMovieDetails } from "@/utils/MovieDetailsData";
+import { getSerieDetails } from "@/utils/TvSeriesDetailsData";
+import { getSerieReview } from "@/utils/TvSerieReviewData";
 
 export const useMovies = () => {
   const {
@@ -74,6 +76,42 @@ export const useMovieDetails = (movieid: string) => {
     isLoading,
     isError,
     movieDetails,
+    isFetching,
+  };
+};
+
+export const useSerieDetails = (serieid: string) => {
+  const {
+    isLoading,
+    isError,
+    data: serieDetails = [],
+    isFetching,
+  } = useQuery({
+    queryKey: ["serieDetail", serieid],
+    queryFn: () => getSerieDetails(serieid),
+  });
+  return {
+    isLoading,
+    isError,
+    serieDetails,
+    isFetching,
+  };
+};
+
+export const useSerieReview = (serieid: string) => {
+  const {
+    isLoading,
+    isError,
+    data: serieReview = [],
+    isFetching,
+  } = useQuery({
+    queryKey: ["serieReview", serieid],
+    queryFn: () => getSerieReview(serieid),
+  });
+  return {
+    isLoading,
+    isError,
+    serieReview,
     isFetching,
   };
 };

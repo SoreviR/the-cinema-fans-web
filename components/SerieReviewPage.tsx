@@ -1,15 +1,13 @@
 "use client";
 
-import { useMovieDetails, useMovieReview } from "@/hooks/useMoviesAndSeries";
+import { useSerieDetails, useSerieReview } from "@/hooks/useMoviesAndSeries";
 import { Spinner } from "@material-tailwind/react";
 import Image from "next/image";
 import React from "react";
 
-const MovieReviewPage = ({ movieid }: { movieid: string }) => {
-  const { movieReview, isLoading } = useMovieReview(movieid);
-  const { movieDetails } = useMovieDetails(movieid);
-
-  console.log(movieReview[0]?.author_details.rating);
+const SerieReviewPage = ({ serieid: serieid }: { serieid: string }) => {
+  const { serieReview, isLoading } = useSerieReview(serieid);
+  const { serieDetails } = useSerieDetails(serieid);
 
   return (
     <div className="flex flex-col items-center gap-1 p-5">
@@ -19,21 +17,23 @@ const MovieReviewPage = ({ movieid }: { movieid: string }) => {
         ) : (
           <Image
             className="w-400 h-400 rounded-xl p-5"
-            src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w500${serieDetails.poster_path}`}
             alt="movie-poster"
             width={200}
             height={200}
           />
         )}
         <div className="flex flex-col gap-3 justify-center">
-          <p className="text-xl font-bold">{movieDetails.original_title}</p>
+          <p className="text-xl font-bold">{serieDetails.original_title}</p>
           <aside>
             <div className="flex gap-1 items-center">
               <p>Rate:</p>
               <div className="rounded-full px-1 py-3 bg-sky-700 hover:bg-sky-500 font-bold">
-                {movieReview.length > 1 || movieReview.length > 2
-                  ? movieReview[2]?.author_details.rating
-                  : movieReview[0]?.author_details.rating}{" "}
+                {serieReview.length == 0
+                  ? "0"
+                  : serieReview.length > 1 || serieReview.length > 2
+                  ? serieReview[2]?.author_details.rating
+                  : serieReview[0]?.author_details.rating}{" "}
                 / 10
               </div>
             </div>
@@ -48,9 +48,11 @@ const MovieReviewPage = ({ movieid }: { movieid: string }) => {
           </div>
         ) : (
           <p className="text-white">
-            {movieReview.length > 1 && movieReview.length > 2
-              ? movieReview[2]?.content
-              : movieReview[0]?.content}
+            {serieReview.length == 0
+              ? "To soon to say something!"
+              : serieReview.length > 1 && serieReview.length > 2
+              ? serieReview[2]?.content
+              : serieReview[0]?.content}
           </p>
         )}
       </div>
@@ -58,4 +60,4 @@ const MovieReviewPage = ({ movieid }: { movieid: string }) => {
   );
 };
 
-export default MovieReviewPage;
+export default SerieReviewPage;

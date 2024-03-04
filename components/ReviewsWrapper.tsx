@@ -1,8 +1,13 @@
 import React, { useRef } from "react";
 import ReviewCard from "./ReviewCard";
 import { useScroll, useTransform, motion } from "framer-motion";
+import { useMovies } from "@/hooks/useMoviesAndSeries";
 
 const ReviewsWrapper = () => {
+  const { movies, isLoading } = useMovies();
+  const reviewsArray = movies.splice(0, 3);
+  console.log(reviewsArray);
+
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -31,7 +36,13 @@ const ReviewsWrapper = () => {
             duration: 2,
           }}
         >
-          <ReviewCard />
+          <ReviewCard
+            cardImg={reviewsArray[0]?.backdrop_path}
+            cardTitle={reviewsArray[0]?.title}
+            cardInfo={reviewsArray[0]?.overview}
+            cardRate={reviewsArray[0]?.vote_average}
+            cardId={reviewsArray[0]?.id}
+          />
         </motion.div>
 
         <motion.div
@@ -46,7 +57,13 @@ const ReviewsWrapper = () => {
             duration: 2,
           }}
         >
-          <ReviewCard />
+          <ReviewCard
+            cardImg={reviewsArray[1]?.backdrop_path}
+            cardTitle={reviewsArray[1]?.title}
+            cardInfo={reviewsArray[1]?.overview}
+            cardRate={reviewsArray[1]?.vote_average}
+            cardId={reviewsArray[1]?.id}
+          />
         </motion.div>
 
         <motion.div
@@ -61,7 +78,13 @@ const ReviewsWrapper = () => {
             duration: 2,
           }}
         >
-          <ReviewCard />
+          <ReviewCard
+            cardImg={reviewsArray[2]?.backdrop_path}
+            cardTitle={reviewsArray[2]?.title}
+            cardInfo={reviewsArray[2]?.overview}
+            cardRate={reviewsArray[2]?.vote_average}
+            cardId={reviewsArray[2]?.id}
+          />
         </motion.div>
       </div>
     </div>

@@ -52,6 +52,7 @@ const MoviesCarousel = () => {
                 cardImg={movie.poster_path}
                 cardTitle={movie.original_title}
                 cardInfo={movie.overview}
+                cardPage="movies"
               />
             </SwiperSlide>
           );

@@ -6,7 +6,6 @@ import { useMovies } from "@/hooks/useMoviesAndSeries";
 const ReviewsWrapper = () => {
   const { movies, isLoading } = useMovies();
   const reviewsArray = movies.splice(0, 3);
-  console.log(reviewsArray);
 
   const container = useRef(null);
   const { scrollYProgress } = useScroll({

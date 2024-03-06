@@ -3,9 +3,22 @@
 import React from "react";
 import MoviesSeriesPagesCard from "./MoviesSeriesPagesCard";
 import { useMovies } from "@/hooks/useMoviesAndSeries";
+import PaginationControls from "./PaginationControls";
 
-const MoviesPage = () => {
-  const { movies, isLoading } = useMovies();
+const MoviesPage = ({
+  start,
+  end,
+  page,
+}: {
+  start: number;
+  end: number;
+  page: string | string[];
+}) => {
+  const { movies, isLoading } = useMovies(page);
+  console.log(movies);
+
+  // const entries = movies.slice(start, end);
+  // console.log(entries);
 
   interface MovieProps {
     title: string;
@@ -21,17 +34,18 @@ const MoviesPage = () => {
   }
 
   return (
-    <div className="flex flex-col items-center w-screen">
+    <div className="flex flex-col items-center pb-6 w-screen">
       <div className="h-24"></div>
       <div className="text-white ">Movies Page</div>;
       <div className="flex justify-center w-[1200px] gap-x-10 gap-y-12 p-10 flex-wrap">
-        {movies.map((movie: MovieProps) => {
+        {movies?.map((movie: MovieProps) => {
           return (
             <div
               key={movie.id}
               className="flex flex-col gap-1 items-center group"
             >
               <MoviesSeriesPagesCard
+                key={movie.id}
                 cardImg={movie.poster_path}
                 cardRate={movie.vote_average}
                 cardInfo={movie.overview}
@@ -45,6 +59,7 @@ const MoviesPage = () => {
           );
         })}
       </div>
+      <PaginationControls type={"movies"} />
     </div>
   );
 };

@@ -27,7 +27,6 @@ const Navbar = () => {
     },
   ];
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     <nav className="w-full flex justify-between items-center fixed z-50 p-6 bg-slate-950/80">
@@ -42,9 +41,9 @@ const Navbar = () => {
               key={i}
               className={`${
                 pathname == link.path
-                  ? `text-[#6ffde5] font-bold`
+                  ? `text-[#00FFFF] font-bold`
                   : ` font-normal`
-              } hover:text-[#6ffde5] hover:font-bold`}
+              } hover:text-[#00FFFF] hover:font-bold`}
             >
               <Link href={link.path}>{link.text}</Link>
             </li>

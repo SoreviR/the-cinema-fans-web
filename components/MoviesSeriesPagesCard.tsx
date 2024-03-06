@@ -2,7 +2,6 @@ import { starsCount } from "@/utils/RateStarsCount";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-// import { RiTriangleFill, RiTriangleLine } from "react-icons/ri";
 
 interface CardProps {
   cardImg: string;
@@ -19,19 +18,6 @@ const MoviesSeriesPagesCard: React.FC<CardProps> = ({
   cardId,
   cardPage,
 }) => {
-  // let starts = [];
-  // const startsCount = (cardRate: number) => {
-  //   for (let i = 0; i < cardRate / 2; i++) {
-  //     starts.push(<RiTriangleFill />);
-  //   }
-  //   if (cardRate < 10) {
-  //     for (let i = cardRate / 2; i < 10 / 2; i++) {
-  //       starts.push(<RiTriangleLine />);
-  //     }
-  //   }
-  //   return starts;
-  // };
-
   return (
     <Link href={`/${cardPage}/${cardId}`}>
       <div className="relative overflow-hidden w-44 h-60 rounded-xl cursor-pointer text-2xl font-bold bg-slate-950">

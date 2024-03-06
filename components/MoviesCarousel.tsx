@@ -8,9 +8,12 @@ import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import CarouselSliderCard from "./CarouselSliderCard";
 import { useMovies } from "@/hooks/useMoviesAndSeries";
+import { useSearchParams } from "next/navigation";
 
 const MoviesCarousel = () => {
-  const { movies, isLoading } = useMovies();
+  const searchParams = useSearchParams();
+  const page = searchParams.get("page") ?? "1";
+  const { movies, isLoading } = useMovies(page);
 
   interface MovieProps {
     poster_path: string;

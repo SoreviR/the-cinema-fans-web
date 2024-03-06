@@ -8,15 +8,15 @@ import { getMovieDetails } from "@/utils/MovieDetailsData";
 import { getSerieDetails } from "@/utils/TvSeriesDetailsData";
 import { getSerieReview } from "@/utils/TvSerieReviewData";
 
-export const useMovies = () => {
+export const useMovies = (page: string | string[]) => {
   const {
     isLoading,
     isError,
     data: movies = [],
     isFetching,
   } = useQuery({
-    queryKey: ["movies"],
-    queryFn: getMovies,
+    queryKey: ["movies", page],
+    queryFn: () => getMovies(page),
   });
   return {
     isLoading,
@@ -26,15 +26,15 @@ export const useMovies = () => {
   };
 };
 
-export const useSeries = () => {
+export const useSeries = (page: string | string[]) => {
   const {
     isLoading,
     isError,
     data: series = [],
     isFetching,
   } = useQuery({
-    queryKey: ["series"],
-    queryFn: getSeries,
+    queryKey: ["series", page],
+    queryFn: () => getSeries(page),
   });
   return {
     isLoading,

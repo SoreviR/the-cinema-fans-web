@@ -31,7 +31,7 @@ const SerieReviewPage = ({ serieid: serieid }: { serieid: string }) => {
           <aside>
             <div className="flex gap-1 items-center">
               <p>Rate:</p>
-              <div className="rounded-full flex px-1 py-3 bg-[#6ffde5] font-bold">
+              <div className="rounded-full flex px-1 py-3 bg-[#00FFFF] font-bold">
                 {serieReview.length === 0
                   ? ""
                   : serieReview.length > 1 || serieReview.length > 2

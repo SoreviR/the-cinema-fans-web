@@ -33,7 +33,7 @@ const CarouselSliderCard: React.FC<CardSliderProps> = ({
         <p className="text-sm ">{cardInfo.substring(0, 50) + " ..."}</p>
       </div>
       <Link href={`/${cardPage}/${cardId}`}>
-        <button className="bg-sky-700 font-extrabold p-2 px-6 rounded-xl hover:bg-sky-500 transition-colors">
+        <button className="bg-sky-700 font-extrabold p-2 px-6 rounded-lg hover:bg-sky-500 transition-colors">
           See more
         </button>
       </Link>

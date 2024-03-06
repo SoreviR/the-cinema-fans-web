@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import Logo from "@/public/images/The-cinema-fans-logo.png";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const navbarLinks = [
@@ -13,10 +16,7 @@ const Navbar = () => {
       path: "/series",
       text: "Series",
     },
-    {
-      path: "/reviews",
-      text: "Reviews",
-    },
+
     {
       path: "/news",
       text: "News",
@@ -26,22 +26,33 @@ const Navbar = () => {
       text: "Contact",
     },
   ];
+  const pathname = usePathname();
+  console.log(pathname);
+
   return (
     <nav className="w-full flex justify-between items-center fixed z-50 p-6 bg-slate-950/80">
       <Link href={"/"}>
         <Image src={Logo} alt="logo" width={300} height={200} />
       </Link>
 
-      <ul className="flex gap-8 text-white font-bold [&>li]:px-2 [&>li]:py-2 [&>li]:rounded-xl">
+      <ul className="flex gap-12 text-white [&>li]:text-lg ">
         {navbarLinks.map((link, i) => {
           return (
-            <li key={i} className="hover:text-[#6ffde5]">
+            <li
+              key={i}
+              className={`${
+                pathname == link.path
+                  ? `text-[#6ffde5] font-bold`
+                  : ` font-normal`
+              } hover:text-[#6ffde5] hover:font-bold`}
+            >
               <Link href={link.path}>{link.text}</Link>
             </li>
           );
         })}
       </ul>
-      <div className="flex gap-2 px-5 text-white">
+      <div className="w-[300px]"></div>
+      <div className="flex gap-2 px-5 text-white hidden">
         <Link href={"/login"}>
           <button className="px-6 py-2 rounded bg-slate-500">login</button>
         </Link>

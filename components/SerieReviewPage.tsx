@@ -1,6 +1,7 @@
 "use client";
 
 import { useSerieDetails, useSerieReview } from "@/hooks/useMoviesAndSeries";
+import { startsCount } from "@/utils/RateStartsCount";
 import { Spinner } from "@material-tailwind/react";
 import Image from "next/image";
 import React from "react";
@@ -19,22 +20,23 @@ const SerieReviewPage = ({ serieid: serieid }: { serieid: string }) => {
             className="w-400 h-400 rounded-xl p-5"
             src={`https://image.tmdb.org/t/p/w500${serieDetails.poster_path}`}
             alt="movie-poster"
-            width={200}
-            height={200}
+            width={350}
+            height={350}
           />
         )}
-        <div className="flex flex-col gap-3 justify-center">
-          <p className="text-xl font-bold">{serieDetails.original_title}</p>
+        <div className="flex flex-col gap-3 justify-center items-center text-center">
+          <p className="text-5xl w-[500px] font-bold flex-wrap text-center">
+            {serieDetails.name}
+          </p>
           <aside>
             <div className="flex gap-1 items-center">
               <p>Rate:</p>
-              <div className="rounded-full px-1 py-3 bg-sky-700 hover:bg-sky-500 font-bold">
-                {serieReview.length == 0
-                  ? "0"
+              <div className="rounded-full flex px-1 py-3 bg-sky-700 hover:bg-sky-500 font-bold">
+                {serieReview.length === 0
+                  ? ""
                   : serieReview.length > 1 || serieReview.length > 2
-                  ? serieReview[2]?.author_details.rating
-                  : serieReview[0]?.author_details.rating}{" "}
-                / 10
+                  ? startsCount(serieReview[2]?.author_details.rating)
+                  : startsCount(serieReview[0]?.author_details.rating)}
               </div>
             </div>
           </aside>
@@ -47,13 +49,22 @@ const SerieReviewPage = ({ serieid: serieid }: { serieid: string }) => {
             <h2 className="text-white text-3xl">Loading...</h2>
           </div>
         ) : (
-          <p className="text-white">
-            {serieReview.length == 0
-              ? "To soon to say something!"
-              : serieReview.length > 1 && serieReview.length > 2
-              ? serieReview[2]?.content
-              : serieReview[0]?.content}
-          </p>
+          <div className="flex flex-col items-start gap-3 text-white">
+            <p>
+              Author:{" "}
+              {serieReview.length > 1 && serieReview.length > 2
+                ? serieReview[2]?.author_details.username
+                : serieReview[0]?.author_details.username}
+            </p>
+
+            <p className="text-white text-left">
+              {serieReview.length == 0
+                ? "To soon to say something!"
+                : serieReview.length > 1 && serieReview.length > 2
+                ? serieReview[2]?.content
+                : serieReview[0]?.content}
+            </p>
+          </div>
         )}
       </div>
     </div>

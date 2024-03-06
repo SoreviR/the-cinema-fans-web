@@ -30,7 +30,7 @@ const MovieDetailsPage = ({ movieid }: { movieid: string }) => {
             height={500}
           />
 
-          <p className="text-white text-xl font-bold">
+          <p className="text-white text-5xl w-[500px] font-bold flex-wrap text-center">
             {movieDetails.original_title}
           </p>
           <div className="flex gap-4">
@@ -45,7 +45,7 @@ const MovieDetailsPage = ({ movieid }: { movieid: string }) => {
           <div className="flex flex-col gap-5 w-2/4 items-center">
             <p className="text-white">{movieDetails.overview}</p>
             <Link href={`/movies/${movieid}/reviews/${movieid}`}>
-              <button className="bg-sky-700 font-extrabold text-white p-2 px-6 rounded-xl hover:bg-sky-500 transition-colors">
+              <button className="bg-sky-700 font-extrabold text-white p-2 px-6 rounded-lg hover:bg-sky-500 transition-colors">
                 Review
               </button>
             </Link>

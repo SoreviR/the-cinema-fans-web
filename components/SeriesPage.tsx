@@ -24,10 +24,13 @@ const SeriesPage = () => {
     <div className="flex flex-col items-center w-screen">
       <div className="h-24"></div>
       <div className="text-white ">Series Page</div>;
-      <div className="flex justify-center w-[1200px] gap-x-10 gap-y-12 p-10 flex-wrap">
+      <div className="flex justify-center w-[1200px] gap-x-10 gap-y-12 p-10 flex-wrap ">
         {series.map((serie: MovieProps) => {
           return (
-            <div key={serie.id} className="flex flex-col gap-1 items-center">
+            <div
+              key={serie.id}
+              className="flex flex-col gap-1 items-center group"
+            >
               <MoviesSeriesPagesCard
                 cardImg={serie.poster_path}
                 cardRate={serie.vote_average}
@@ -35,7 +38,7 @@ const SeriesPage = () => {
                 cardId={serie.id}
                 cardPage={"series"}
               />
-              <p className="text-white text-wrap w-44 text-center">
+              <p className="text-white text-wrap w-44 text-center  group-hover:font-bold group-hover:text-[#9C3CBE]">
                 {serie.name}
               </p>
             </div>

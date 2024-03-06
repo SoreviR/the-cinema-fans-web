@@ -2,9 +2,12 @@ import React, { useRef } from "react";
 import ReviewCard from "./ReviewCard";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useMovies } from "@/hooks/useMoviesAndSeries";
+import { useSearchParams } from "next/navigation";
 
 const ReviewsWrapper = () => {
-  const { movies, isLoading } = useMovies();
+  const searchParams = useSearchParams();
+  const page = searchParams.get("page") ?? "1";
+  const { movies, isLoading } = useMovies(page);
   const reviewsArray = movies.splice(0, 3);
 
   const container = useRef(null);

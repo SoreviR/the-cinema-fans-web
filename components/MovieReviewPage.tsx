@@ -1,7 +1,7 @@
 "use client";
 
 import { useMovieDetails, useMovieReview } from "@/hooks/useMoviesAndSeries";
-import { startsCount } from "@/utils/RateStartsCount";
+import { starsCount } from "@/utils/RateStarsCount";
 import { Spinner } from "@material-tailwind/react";
 import Image from "next/image";
 import React from "react";
@@ -14,7 +14,7 @@ const MovieReviewPage = ({ movieid }: { movieid: string }) => {
 
   return (
     <div className="flex flex-col items-center gap-1 p-5">
-      <div className="text-white flex gap-4">
+      <div className="text-white flex  gap-4">
         {isLoading ? (
           <Spinner className="h-10 w-10" />
         ) : (
@@ -33,10 +33,10 @@ const MovieReviewPage = ({ movieid }: { movieid: string }) => {
           <aside>
             <div className="flex gap-1 items-center">
               <p>Rate:</p>
-              <div className="rounded-full flex px-1 py-3 bg-sky-700 hover:bg-sky-500 font-bold">
+              <div className="rounded-full flex px-1 py-3 bg-[#6ffde5] font-bold">
                 {movieReview.length > 1 || movieReview.length > 2
-                  ? startsCount(movieReview[2]?.author_details.rating)
-                  : startsCount(movieReview[0]?.author_details.rating)}{" "}
+                  ? starsCount(movieReview[2]?.author_details.rating)
+                  : starsCount(movieReview[0]?.author_details.rating)}{" "}
               </div>
             </div>
           </aside>

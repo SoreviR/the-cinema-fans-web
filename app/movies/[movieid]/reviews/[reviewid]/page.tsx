@@ -7,7 +7,7 @@ const page = ({
   params: { movieid: string; reviewid: string };
 }) => {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <div className="h-24"></div>
       <MovieReviewPage movieid={params.movieid} />;
     </div>

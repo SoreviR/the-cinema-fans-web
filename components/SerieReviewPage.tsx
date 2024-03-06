@@ -1,7 +1,7 @@
 "use client";
 
 import { useSerieDetails, useSerieReview } from "@/hooks/useMoviesAndSeries";
-import { startsCount } from "@/utils/RateStartsCount";
+import { starsCount } from "@/utils/RateStarsCount";
 import { Spinner } from "@material-tailwind/react";
 import Image from "next/image";
 import React from "react";
@@ -31,12 +31,12 @@ const SerieReviewPage = ({ serieid: serieid }: { serieid: string }) => {
           <aside>
             <div className="flex gap-1 items-center">
               <p>Rate:</p>
-              <div className="rounded-full flex px-1 py-3 bg-sky-700 hover:bg-sky-500 font-bold">
+              <div className="rounded-full flex px-1 py-3 bg-[#6ffde5] font-bold">
                 {serieReview.length === 0
                   ? ""
                   : serieReview.length > 1 || serieReview.length > 2
-                  ? startsCount(serieReview[2]?.author_details.rating)
-                  : startsCount(serieReview[0]?.author_details.rating)}
+                  ? starsCount(serieReview[2]?.author_details.rating)
+                  : starsCount(serieReview[0]?.author_details.rating)}
               </div>
             </div>
           </aside>

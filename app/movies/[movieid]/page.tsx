@@ -3,7 +3,7 @@ import React from "react";
 
 const page = ({ params }: { params: { movieid: string } }) => {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <div className="h-24"></div>
       <MovieDetailsPage movieid={params.movieid} />
     </div>

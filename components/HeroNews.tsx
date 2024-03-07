@@ -49,7 +49,7 @@ const HeroNews = () => {
             className="w-full h-full  flex justify-center"
             loop={true}
             autoplay={{
-              delay: 1500,
+              delay: 2500,
               disableOnInteraction: false,
             }}
             centeredSlides={true}

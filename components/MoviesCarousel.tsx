@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-import { EffectCoverflow, Pagination } from "swiper/modules";
+import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
 import CarouselSliderCard from "./CarouselSliderCard";
 import { useMovies } from "@/hooks/useMoviesAndSeries";
 import { useSearchParams } from "next/navigation";
@@ -28,10 +28,13 @@ const MoviesCarousel = () => {
 
   return (
     <div className="h-screen w-[1200px] flex flex-col gap-10 p-14 pl-20">
-      <h2 className="text-4xl text-white ml-32">Movies</h2>
+      <h2 className="text-5xl font-bold text-white ml-32">Movies</h2>
       <Swiper
-        loop={false}
-        autoplay={true}
+        loop={true}
+        autoplay={{
+          delay: 1500,
+          disableOnInteraction: false,
+        }}
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
@@ -44,12 +47,12 @@ const MoviesCarousel = () => {
           slideShadows: true,
         }}
         pagination={false}
-        modules={[EffectCoverflow, Pagination]}
+        modules={[EffectCoverflow, Pagination, Autoplay]}
         className="w-full h-[480px]"
       >
         {movies.map((movie: MovieProps) => {
           return (
-            <SwiperSlide className="w-[300px] h-500 pt-10" key={movie.id}>
+            <SwiperSlide className="w-[300px] h-500 pt-8" key={movie.id}>
               <CarouselSliderCard
                 cardId={movie.id}
                 cardImg={movie.poster_path}

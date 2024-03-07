@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { starsCount } from "@/utils/RateStarsCount";
 
 const ReviewCard = ({
   cardImg,
@@ -32,9 +33,9 @@ const ReviewCard = ({
       <div className="">
         <div className="flex justify-between">
           <h2 className="text-2xl font-bold mb-2 text-gray-100">{cardTitle}</h2>
-          <h3 className="text-2xl font-bold mb-2 text-gray-100">
-            {cardRate?.toFixed(1)}/10
-          </h3>
+          <p className="h-4 flex px-1 py-[1px]  rounded-lg bg-slate-500 font-bold mb-2 text-gray-100">
+            {starsCount(cardRate)}
+          </p>
         </div>
         <p className="text-gray-200 line-clamp-3">{cardInfo}</p>
       </div>

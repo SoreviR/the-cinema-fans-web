@@ -55,7 +55,7 @@ const SeriesPage = ({
           );
         })}
       </div>
-      <PaginationControls type={"series"} />
+      <PaginationControls start={start} type={"series"} />
     </div>
   );
 };

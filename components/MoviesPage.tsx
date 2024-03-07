@@ -17,9 +17,6 @@ const MoviesPage = ({
   const { movies, isLoading } = useMovies(page);
   console.log(movies);
 
-  // const entries = movies.slice(start, end);
-  // console.log(entries);
-
   interface MovieProps {
     title: string;
     poster_path: string;
@@ -59,7 +56,7 @@ const MoviesPage = ({
           );
         })}
       </div>
-      <PaginationControls type={"movies"} />
+      <PaginationControls start={start} type={"movies"} />
     </div>
   );
 };

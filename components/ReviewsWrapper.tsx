@@ -22,9 +22,9 @@ const ReviewsWrapper = () => {
   return (
     <div
       ref={container}
-      className="h-screen w-[1200px] flex flex-col gap-10 p-8 overflow-hidden"
+      className="h-screen w-[1200px] flex flex-col gap-10 p-8"
     >
-      <h2 className="text-4xl text-white ml-44">Movies Reviews</h2>
+      <h2 className="text-5xl font-bold text-white ml-44">Movies Reviews</h2>
       <div className="flex gap-12 flex-wrap">
         <motion.div
           initial={{
@@ -69,12 +69,15 @@ const ReviewsWrapper = () => {
         </motion.div>
 
         <motion.div
+          className="z-50"
           initial={{
             position: "absolute",
+            z: 50,
             x: 800,
           }}
           whileInView={{
             x: 800,
+            z: 50,
           }}
           transition={{
             duration: 2,

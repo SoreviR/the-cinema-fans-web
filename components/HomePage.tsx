@@ -20,23 +20,23 @@ const HomePage = () => {
   return (
     <main
       ref={container}
-      className="flex min-h-screen flex-col items-center justify-between pt-28 gap-20"
+      className="flex min-h-screen flex-col items-center justify-between pt-10 gap-10"
     >
-      <motion.div style={{ y: sm }} className="pt-10">
+      <div className="pt-10">
         <HeroNews />
-      </motion.div>
+      </div>
 
-      <motion.div style={{ y: md }} className="flex flex-col">
+      <div className="flex flex-col">
         <MoviesCarousel />
-      </motion.div>
+      </div>
 
-      <motion.div style={{ y: md }} className="flex flex-col">
+      <div className="flex flex-col">
         <SeriesCarousel />
-      </motion.div>
+      </div>
 
-      <motion.div style={{ y: md }}>
+      <div>
         <ReviewsWrapper />
-      </motion.div>
+      </div>
     </main>
   );
 };

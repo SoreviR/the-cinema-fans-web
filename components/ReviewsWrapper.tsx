@@ -24,7 +24,9 @@ const ReviewsWrapper = () => {
       ref={container}
       className="h-screen w-[1200px] flex flex-col gap-10 p-8"
     >
-      <h2 className="text-5xl font-bold text-white ml-44">Movies Reviews</h2>
+      <h2 className="text-5xl font-bold text-[#F8F7F4] ml-44">
+        Movies Reviews
+      </h2>
       <div className="flex gap-12 flex-wrap">
         <motion.div
           initial={{

@@ -12,7 +12,7 @@ const SerieReviewPage = ({ serieid: serieid }: { serieid: string }) => {
 
   return (
     <div className="flex flex-col items-center gap-1 p-5">
-      <div className="text-white flex gap-4">
+      <div className="text-[#F8F7F4] flex gap-4">
         {isLoading ? (
           <Spinner className="h-10 w-10" />
         ) : (
@@ -43,13 +43,13 @@ const SerieReviewPage = ({ serieid: serieid }: { serieid: string }) => {
         </div>
       </div>
       <div className="p-10 w-3/4 text-center flex flex-col gap-2">
-        <h4 className="text-white text-xl self-start">Review:</h4>
+        <h4 className="text-[#F8F7F4] text-xl self-start">Review:</h4>
         {isLoading ? (
           <div className="flex flex-col justify-center">
-            <h2 className="text-white text-3xl">Loading...</h2>
+            <h2 className="text-[#F8F7F4] text-3xl">Loading...</h2>
           </div>
         ) : (
-          <div className="flex flex-col items-start gap-3 text-white">
+          <div className="flex flex-col items-start gap-3 text-[#F8F7F4]">
             <p>
               Author:{" "}
               {serieReview.length > 1 && serieReview.length > 2
@@ -57,7 +57,7 @@ const SerieReviewPage = ({ serieid: serieid }: { serieid: string }) => {
                 : serieReview[0]?.author_details.username}
             </p>
 
-            <p className="text-white text-left">
+            <p className="text-[#F8F7F4] text-left">
               {serieReview.length == 0
                 ? "To soon to say something!"
                 : serieReview.length > 1 && serieReview.length > 2

@@ -33,7 +33,7 @@ const MoviesPage = ({
   return (
     <div className="flex flex-col items-center pb-6 w-screen">
       <div className="h-24"></div>
-      <div className="text-white ">Movies Page</div>;
+      <div className="text-[#F8F7F4] ">Movies Page</div>;
       <div className="flex justify-center w-[1200px] gap-x-10 gap-y-12 p-10 flex-wrap">
         {movies?.map((movie: MovieProps) => {
           return (
@@ -49,7 +49,7 @@ const MoviesPage = ({
                 cardId={movie.id}
                 cardPage="movies"
               />
-              <p className="text-white text-wrap w-44 text-center group-hover:font-bold group-hover:text-[#9C3CBE]">
+              <p className="text-[#F8F7F4] text-wrap w-44 text-center group-hover:font-bold group-hover:text-[#9C3CBE]">
                 {movie.title}
               </p>
             </div>

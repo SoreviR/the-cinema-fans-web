@@ -40,7 +40,7 @@ const ReviewCard = ({
         <p className="text-gray-200 line-clamp-3">{cardInfo}</p>
       </div>
       <Link href={`/movies/${cardId}/reviews/${cardId}`}>
-        <button className=" text-white mt-6 bg-sky-700 font-extrabold p-2 px-6 rounded-lg hover:bg-sky-500 transition-colors">
+        <button className=" text-[#F8F7F4] mt-6 bg-sky-700 font-extrabold p-2 px-6 rounded-lg hover:bg-sky-500 transition-colors">
           Explore
         </button>
       </Link>

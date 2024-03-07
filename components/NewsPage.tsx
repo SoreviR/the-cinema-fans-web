@@ -10,7 +10,7 @@ const NewsPage = () => {
   return (
     <div className="flex flex-col gap-4 pb-10">
       <div className="h-24"></div>
-      <h2 className="text-white text-4xl font-bold pl-52">Trending News</h2>
+      <h2 className="text-[#F8F7F4] text-4xl font-bold pl-52">Trending News</h2>
       <div className="flex flex-col gap-10">
         {movieNewsData.map((news: NewsProps, i) => {
           return (

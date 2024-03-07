@@ -23,10 +23,10 @@ const PaginationControls: FC<PaginationControlsProps> = ({
   const per_page = searchParams.get("per_page") ?? "20";
 
   return (
-    <div className="flex gap-2 text-white items-center">
+    <div className="flex gap-2 text-[#F8F7F4] items-center">
       <button
         disabled={start < 1}
-        className="text-white  bg-sky-700 font-extrabold p-2 px-6 rounded-lg hover:bg-sky-500 transition-colors"
+        className="text-[#F8F7F4]  bg-sky-700 font-extrabold p-2 px-6 rounded-lg hover:bg-sky-500 transition-colors"
         onClick={() => {
           router.push(`${type}/?page=${Number(page) - 1}&per_page=${per_page}`);
         }}
@@ -40,7 +40,7 @@ const PaginationControls: FC<PaginationControlsProps> = ({
 
       <button
         disabled={page > (type == "movies" ? "165" : "1000")}
-        className="text-white  bg-sky-700 font-extrabold p-2 px-6 rounded-lg hover:bg-sky-500 transition-colors"
+        className="text-[#F8F7F4]  bg-sky-700 font-extrabold p-2 px-6 rounded-lg hover:bg-sky-500 transition-colors"
         onClick={() => {
           router.push(`${type}/?page=${Number(page) + 1}&per_page=${per_page}`);
         }}

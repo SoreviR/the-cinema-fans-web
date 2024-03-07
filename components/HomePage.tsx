@@ -20,9 +20,9 @@ const HomePage = () => {
   return (
     <main
       ref={container}
-      className="flex min-h-screen flex-col items-center justify-between pt-10 gap-10"
+      className="flex min-h-screen flex-col items-center justify-between pt-10 "
     >
-      <div className="pt-10">
+      <div className="pt-14">
         <HeroNews />
       </div>
 

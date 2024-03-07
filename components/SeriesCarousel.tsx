@@ -28,12 +28,12 @@ const SeriesCarousel = () => {
 
   return (
     <div className="h-screen w-[1200px] flex flex-col gap-10 p-14 pl-20">
-      <h2 className="text-5xl font-bold text-white ml-32">Series</h2>
+      <h2 className="text-5xl font-bold text-[#F8F7F4] ml-32">Series</h2>
       <Swiper
         loop={true}
         autoplay={{
           delay: 1500,
-          disableOnInteraction: false,
+          disableOnInteraction: true,
           reverseDirection: true,
         }}
         effect={"coverflow"}

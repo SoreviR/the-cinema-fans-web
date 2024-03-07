@@ -14,7 +14,7 @@ const MovieReviewPage = ({ movieid }: { movieid: string }) => {
 
   return (
     <div className="flex flex-col items-center gap-1 p-5">
-      <div className="text-white flex  gap-4">
+      <div className="text-[#F8F7F4] flex  gap-4">
         {isLoading ? (
           <Spinner className="h-10 w-10" />
         ) : (
@@ -27,7 +27,7 @@ const MovieReviewPage = ({ movieid }: { movieid: string }) => {
           />
         )}
         <div className="flex flex-col gap-3 justify-center">
-          <p className="text-white text-5xl w-[500px] font-bold flex-wrap">
+          <p className="text-[#F8F7F4] text-5xl w-[500px] font-bold flex-wrap">
             {movieDetails.original_title}
           </p>
           <aside>
@@ -43,20 +43,20 @@ const MovieReviewPage = ({ movieid }: { movieid: string }) => {
         </div>
       </div>
       <div className="p-10 w-3/4 text-center flex flex-col gap-2">
-        <h4 className="text-white text-xl self-start">Review:</h4>
+        <h4 className="text-[#F8F7F4] text-xl self-start">Review:</h4>
         {isLoading ? (
-          <div className="flex flex-col items-start text-white">
-            <h2 className="text-white text-3xl">Loading...</h2>
+          <div className="flex flex-col items-start text-[#F8F7F4]">
+            <h2 className="text-[#F8F7F4] text-3xl">Loading...</h2>
           </div>
         ) : (
-          <div className="flex flex-col items-start gap-3 text-white">
+          <div className="flex flex-col items-start gap-3 text-[#F8F7F4]">
             <p>
               Author:{" "}
               {movieReview.length > 1 && movieReview.length > 2
                 ? movieReview[2]?.author_details.name
                 : movieReview[0]?.author_details.name}
             </p>
-            <p className="text-white text-left">
+            <p className="text-[#F8F7F4] text-left">
               {movieReview.length > 1 && movieReview.length > 2
                 ? movieReview[2]?.content
                 : movieReview[0]?.content}

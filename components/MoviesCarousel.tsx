@@ -28,12 +28,12 @@ const MoviesCarousel = () => {
 
   return (
     <div className="h-screen w-[1200px] flex flex-col gap-10 p-14 pl-20">
-      <h2 className="text-5xl font-bold text-white ml-32">Movies</h2>
+      <h2 className="text-5xl font-bold text-[#F8F7F4] ml-32">Movies</h2>
       <Swiper
         loop={true}
         autoplay={{
           delay: 1500,
-          disableOnInteraction: false,
+          disableOnInteraction: true,
         }}
         effect={"coverflow"}
         grabCursor={true}
@@ -48,11 +48,11 @@ const MoviesCarousel = () => {
         }}
         pagination={false}
         modules={[EffectCoverflow, Pagination, Autoplay]}
-        className="w-full h-[480px]"
+        className="w-full h-[480px] "
       >
         {movies.map((movie: MovieProps) => {
           return (
-            <SwiperSlide className="w-[300px] h-500 pt-8" key={movie.id}>
+            <SwiperSlide className="w-[300px] h-500 pt-8 " key={movie.id}>
               <CarouselSliderCard
                 cardId={movie.id}
                 cardImg={movie.poster_path}

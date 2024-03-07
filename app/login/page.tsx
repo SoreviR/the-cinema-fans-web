@@ -12,7 +12,7 @@ import { useRouter } from "next/navigation";
 import { auth, provider } from "@/app/lib/firebase-config";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
-import CinameFansImage from "@/public/images/panel icon.png"
+import CinameFansImage from "@/public/images/panel icon.png";
 
 export default function SignIn() {
   const router = useRouter();
@@ -87,7 +87,7 @@ export default function SignIn() {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto  md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12 flex items-center justify-center">
+        <div className="bg-[#F8F7F4] w-full md:max-w-md lg:max-w-full md:mx-auto  md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12 flex items-center justify-center">
           <div className="w-full h-100">
             <h1 className="text-xl md:text-2xl font-bold leading-tight mt-12">
               Log in to your account
@@ -104,7 +104,7 @@ export default function SignIn() {
                   type="email"
                   {...register("email")}
                   placeholder="Enter Email Address"
-                  className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
+                  className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-[#F8F7F4] focus:outline-none"
                 />
               </div>
               <div className="mt-4">
@@ -113,13 +113,13 @@ export default function SignIn() {
                   {...register("password")}
                   type="password"
                   placeholder="Enter Password"
-                  className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
+                  className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-[#F8F7F4] focus:outline-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full block bg-indigo-500 hover:bg-indigo-400 focus:bg-indigo-400 text-white font-semibold rounded-lg px-4 py-3 mt-6"
+                className="w-full block bg-indigo-500 hover:bg-indigo-400 focus:bg-indigo-400 text-[#F8F7F4] font-semibold rounded-lg px-4 py-3 mt-6"
               >
                 Log In
               </button>
@@ -127,7 +127,7 @@ export default function SignIn() {
             <hr className="my-6 border-gray-300 w-full" />
             <button
               type="button"
-              className="w-full block bg-white hover:bg-gray-100 focus:bg-gray-100 text-gray-900 font-semibold rounded-lg px-4 py-3 border border-gray-300"
+              className="w-full block bg-[#F8F7F4] hover:bg-gray-100 focus:bg-gray-100 text-gray-900 font-semibold rounded-lg px-4 py-3 border border-gray-300"
             >
               <div
                 onClick={signInWithGoogle}

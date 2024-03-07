@@ -32,7 +32,7 @@ const SeriesPage = ({
   return (
     <div className="flex flex-col items-center pb-6 w-screen">
       <div className="h-24"></div>
-      <div className="text-white ">Series Page</div>;
+      <div className="text-[#F8F7F4] ">Series Page</div>;
       <div className="flex justify-center w-[1200px] gap-x-10 gap-y-12 p-10 flex-wrap ">
         {series.map((serie: SerieProps) => {
           return (
@@ -48,7 +48,7 @@ const SeriesPage = ({
                 cardId={serie.id}
                 cardPage={"series"}
               />
-              <p className="text-white text-wrap w-44 text-center  group-hover:font-bold group-hover:text-[#9C3CBE]">
+              <p className="text-[#F8F7F4] text-wrap w-44 text-center  group-hover:font-bold group-hover:text-[#9C3CBE]">
                 {serie.name}
               </p>
             </div>

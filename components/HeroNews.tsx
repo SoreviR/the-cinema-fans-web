@@ -40,9 +40,9 @@ const HeroNews = () => {
   return (
     <div
       ref={container}
-      className="flex flex-col w-scren h-screen p-5 pt-10 gap-5 "
+      className="flex flex-col w-scren h-screen p-5 pt-2 gap-5 "
     >
-      <h2 className="text-5xl font-bold text-white ml-48">News</h2>
+      <h2 className="text-5xl font-bold text-[#F8F7F4] ml-48">News</h2>
       <div className="self-center justify-center w-[1200px]">
         <div className="w-full pl-60 pr-60 flex justify-center -z-10">
           <Swiper

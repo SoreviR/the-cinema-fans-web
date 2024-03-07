@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -39,14 +40,16 @@ const HeroNewsCard = () => {
               <span className="text-xl font-bold text-blue-600 line-clamp-2">
                 {news.title}
               </span>
-              <p className="line-clamp-3 text-white">{news.info}</p>
+              <p className="line-clamp-3 text-[#F8F7F4]">{news.info}</p>
             </SwiperSlide>
           );
         })}
       </Swiper>
-      <button className="absolute -bottom-5 -right-5 bg-sky-700 font-extrabold text-white p-2 px-6 rounded-lg hover:bg-sky-500 transition-colors">
-        More
-      </button>
+      <Link href={"/news"}>
+        <button className="absolute -bottom-5 -right-5 bg-sky-700 font-extrabold text-[#F8F7F4] p-2 px-6 rounded-lg hover:bg-sky-500 transition-colors">
+          More
+        </button>
+      </Link>
     </div>
   );
 };

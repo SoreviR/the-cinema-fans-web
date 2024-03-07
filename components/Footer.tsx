@@ -24,7 +24,7 @@ const Footer = () => {
           <MdAlternateEmail color={iconsColor} size={iconsSize} />
         </Link>
       </div>
-      <h4 className="text-white text-sm text-center pb-3">
+      <h4 className="text-[#F8F7F4] text-sm text-center pb-3">
         ©Copyrigth. All rights reserved.
       </h4>
     </footer>

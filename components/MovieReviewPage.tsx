@@ -32,8 +32,8 @@ const MovieReviewPage = ({ movieid }: { movieid: string }) => {
           </p>
           <aside>
             <div className="flex gap-1 items-center">
-              <p>Rate:</p>
-              <div className="rounded-full flex px-1 py-3 bg-[#00FFFF] font-bold">
+              <p>Popscore:</p>
+              <div className="rounded-lg flex gap-1 px-1 py-2 bg-[#00FFFF] font-bold">
                 {movieReview.length > 1 || movieReview.length > 2
                   ? starsCount(movieReview[2]?.author_details.rating)
                   : starsCount(movieReview[0]?.author_details.rating)}{" "}

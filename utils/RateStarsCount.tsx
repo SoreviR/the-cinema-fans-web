@@ -11,7 +11,7 @@ export const starsCount = (cardRate: number) => {
     );
   }
   if (cardRate < 10) {
-    for (let i = cardRate / 2; i < 10 / 2; i++) {
+    for (let i = Math.ceil(cardRate / 2); i < 10 / 2; i++) {
       starts.push(
         <Image src={EmptyPopcorn} alt="empty popcorn" width={15} height={15} />
       );
